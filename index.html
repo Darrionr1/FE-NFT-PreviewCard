@@ -15,36 +15,47 @@
 		<link rel="stylesheet" href="style.css" />
 
 		<!-- Font Families -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
 			rel="stylesheet" />
 
 		<title>Frontend Mentor | NFT preview card component</title>
 	</head>
 	<body>
 		<main>
-			<div class="item">
-				<picture>
-					<img class="item__img" src="images/image-equilibrium.jpg" alt="" />
-				</picture>
-				<div class="item__content">
-					<h1 class="item__title">Equilibrium #3429</h1>
-					<p class="item__description">
+			<div class="card">
+				<div class="card__image">
+					<img
+						src="images/image-equilibrium.jpg"
+						alt=""
+						class="card__img-pic" />
+					<div class="image-bg">
+						<img src="images/icon-view.svg" alt="" />
+					</div>
+				</div>
+				<div class="card__content">
+					<h1 class="card__title">Equilibrium #3429</h1>
+
+					<p class="card__description">
 						Our Equilibrium collection promotes balance and calm.
 					</p>
-					<div class="flex-content">
+
+					<div class="flex-contents">
 						<div class="flex-count">
 							<img src="images/icon-ethereum.svg" alt="" />
-							<p>0.041 Eth</p>
+							<p class="count">0.041 ETH</p>
 						</div>
 						<div class="flex-time">
 							<img src="images/icon-clock.svg" alt="" />
-							<p>3 days left</p>
+							<p class="time">3 days left</p>
 						</div>
 					</div>
-
-					<img src="images/image-avatar.png" alt="" />
-					Creation of Jules Wyvern
+					<div class="flex-profile">
+						<img src="images/image-avatar.png" alt="" class="profile__pic" />
+						<p class="profile">Creation of <span>Jules Wyvern</span></p>
+					</div>
 				</div>
 			</div>
 		</main>

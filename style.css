@@ -4,6 +4,7 @@
 	--line: hsl(215, 32%, 27%);
 	--body-clr: hsl(215, 51%, 70%);
 	--count-clr: hsl(178, 100%, 50%);
+	--img-bg-clr: hsl(178, 100%, 50%, 55%);
 
 	--font-sz: 1.125rem;
 
@@ -77,12 +78,135 @@ h6 {
 	overflow-wrap: break-word;
 }
 
+/* General Styles */
+
 body {
-	font-family: var(--font-fm);
-	font-size: var(--font-sz);
 	background-color: var(--main-bg);
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
 	color: white;
+	font-family: var(--font-fm);
+	font-weight: var(--font-wt4);
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+	padding: 1em;
+	color: var(--body-clr);
+}
+
+/* Card Styles */
+
+.card {
+	max-width: 320px;
+	background-color: var(--card-bg);
+	padding: 1.4em;
+	border-radius: 0.675em;
+	display: grid;
+}
+
+.card__image {
+	border-radius: 0.6em;
+	overflow: hidden;
+	max-width: 100%;
+	cursor: pointer;
+	position: relative;
+}
+
+/* Learned how to add an image to another image with position and opacity */
+
+/* This is how I positioned the background image and bg to just cover the original image and made it transparent with opacity */
+
+.card__image .image-bg {
+	position: absolute;
+	background-color: var(--img-bg-clr);
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+}
+
+/* The one makes the background visible */
+
+.card__image .image-bg:hover {
+	opacity: 1;
+}
+/* This positions the view image so that it is in the center of the original image */
+.card__image .image-bg img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.card__title {
+	font-size: 1.33rem;
+	font-weight: var(--font-wt6);
+	margin-top: 1.3em;
+	color: white;
+	cursor: pointer;
+}
+
+.card__title:hover {
+	color: var(--count-clr);
+}
+
+.card__description {
+	font-weight: var(--font-wt3);
+	font-size: 1rem;
+	color: var(--body-clr);
+	margin-top: 0.6em;
+}
+
+.flex-contents {
+	font-weight: var(--font-wt4);
+	font-size: 1rem;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 0.8em;
+	border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.flex-count {
+	display: flex;
+	align-items: center;
+}
+
+.flex-time {
+	display: flex;
+	align-items: center;
+}
+
+.count {
+	margin-left: 0.3em;
+	color: var(--count-clr);
+}
+
+.time {
+	margin-left: 0.3em;
+}
+
+.flex-profile {
+	margin-top: 1em;
+	display: flex;
+	align-items: center;
+}
+
+.profile__pic {
+	width: 12%;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+
+.profile {
+	margin-left: 0.875em;
+}
+
+span {
+	color: white;
+	font-weight: var(--font-wt3);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+span:hover {
+	color: var(--count-clr);
 }
